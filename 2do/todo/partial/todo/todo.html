@@ -1,22 +1,23 @@
-<div class="col-md-12" ng-controller="TodoCtrl">
-  <div class="form-group">
+<div class="col-md-12" ng-controller="TodoCtrl" style="margin-top: 30px;">
+  <div class="form-inline col-md-4">
     <form action="">
       <input class="form-control" type="text" ng-model="newTodo">
       <button class="btn btn-primary" ng-click="createTodo()">Create</button>
     </form>
   </div>
 
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-8">
     <div class="thumbnail" ng-repeat="todo in todos">
 
       <div class="row">
         <div class="col-md-8">
-          <h4> {{todo.id}}</h4>
+          <h4 ng-if="!todo.done"> {{todo.item}}</h4>
+          <h4 ng-if="todo.done"><s>{{todo.item}}</s></h4>
         </div>
 
         <div class="col-md-4">
-          <button ng-if="!todo.done" class="btn btn-success pull-right" ng-click="markDone(todo)">{{todo.id}}</button>
-          <button ng-if="todo.done" class="btn btn-warning pull-right" ng-click="markDone()">Mark Unone</button>
+          <button ng-if="!todo.done" class="btn btn-success pull-right" ng-click="markDone(todo)">Done</button>
+          <button ng-if="todo.done" class="btn btn-warning pull-right" ng-click="markUndone(todo)">Mark Unone</button>
         </div>
       </div>
 

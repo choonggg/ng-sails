@@ -20,4 +20,10 @@ angular.module('todo').controller('TodoCtrl',function($scope, todoService){
       todo.done = true
     });
   }
+
+  $scope.markUndone = function(todo){
+    todoService.markUndone(todo).then(function(resp){
+      todo.done = false
+    });
+  }
 });

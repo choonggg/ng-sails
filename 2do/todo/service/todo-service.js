@@ -22,7 +22,16 @@ angular.module('todo').factory('todoService',function($http, $q) {
     },
 
     markDone: function(todo){
-      $http.post(baseUrl + '/todo/markDone', todo).success(function(resp){
+      $http.put(baseUrl + '/todo/markDone', todo).success(function(resp){
+        defer.resolve(resp)
+      }).error(function(err){
+        defer.reject(err);
+      });
+      return defer.promise;
+    },
+
+    markUndone: function(todo){
+      $http.put(baseUrl + '/todo/markUndone', todo).success(function(resp){
         defer.resolve(resp)
       }).error(function(err){
         defer.reject(err);
