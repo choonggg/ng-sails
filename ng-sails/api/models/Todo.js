@@ -10,7 +10,7 @@ module.exports = {
   attributes: {
     item: {
       type: 'string',
-      requried: true
+      required: true
     },
     done: {
       type: 'boolean',

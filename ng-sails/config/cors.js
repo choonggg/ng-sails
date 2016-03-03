@@ -27,6 +27,9 @@
  */
 
 module.exports.cors = {
+  allRoutes: true,
+  origin: 'http://localhost:9001',
+  securityLevel: 1,
 
   /***************************************************************************
   *                                                                          *
@@ -73,6 +76,6 @@ module.exports.cors = {
   *                                                                          *
   ***************************************************************************/
 
-  // headers: 'content-type'
+  headers: 'content-type'
 
 };

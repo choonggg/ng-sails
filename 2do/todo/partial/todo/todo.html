@@ -1,0 +1,26 @@
+<div class="col-md-12" ng-controller="TodoCtrl">
+  <div class="form-group">
+    <form action="">
+      <input class="form-control" type="text" ng-model="newTodo">
+      <button class="btn btn-primary" ng-click="createTodo()">Create</button>
+    </form>
+  </div>
+
+  <div class="col-md-6 col-md-offset-3">
+    <div class="thumbnail" ng-repeat="todo in todos">
+
+      <div class="row">
+        <div class="col-md-8">
+          <h4> {{todo.id}}</h4>
+        </div>
+
+        <div class="col-md-4">
+          <button ng-if="!todo.done" class="btn btn-success pull-right" ng-click="markDone(todo)">{{todo.id}}</button>
+          <button ng-if="todo.done" class="btn btn-warning pull-right" ng-click="markDone()">Mark Unone</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+</div>
