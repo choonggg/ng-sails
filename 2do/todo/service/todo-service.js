@@ -23,7 +23,7 @@ angular.module('todo').factory('todoService',function($http, $q) {
 
     markDone: function(todo){
       $http.put(baseUrl + '/todo/markDone', todo).success(function(resp){
-        defer.resolve(resp)
+        defer.resolve(resp);
       }).error(function(err){
         defer.reject(err);
       });
@@ -32,11 +32,11 @@ angular.module('todo').factory('todoService',function($http, $q) {
 
     markUndone: function(todo){
       $http.put(baseUrl + '/todo/markUndone', todo).success(function(resp){
-        defer.resolve(resp)
+        defer.resolve(resp);
       }).error(function(err){
         defer.reject(err);
       });
       return defer.promise;
     }
-  }
+  };
 });
